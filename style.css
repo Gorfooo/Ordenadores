@@ -1,0 +1,31 @@
+.linha-vertical {
+    height: 2000px;/*Altura da linha*/
+    border-left: 1px solid;/*grossura da borda*/
+  }
+.celular{
+    display: none;
+}
+.micro{
+    display: unset;
+}
+@media only screen and (max-width: 660px){
+    .celular{
+        display: unset;
+    }
+    .micro{
+        display: none;
+    }
+    div.table {
+        overflow-x: scroll;
+    }
+    th, td {
+        min-width: 50px; /* width/largura das células à escolha */
+    }
+}
+@media only screen and (max-width: 1000px){
+    .col-sm-2 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+}

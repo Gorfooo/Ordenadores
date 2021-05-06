@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/00a4711f34.js" crossorigin="anonymous"></script>
+    <!--  -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Bubble Sort</title>
 </head>
 
@@ -36,40 +38,118 @@
             </ul>
         </div>
     </nav>
-    <div class='container-fluid'>
-        <div class='row'>
-            <div class='col-sm-2'>
-                <table class="table mt-5 table-borderless">
+    <div class='micro'>
+        <div class='container-fluid'>
+            <div class='row'>
+                <div class='col-sm-2'>
+                    <table class="table mt-5 table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Números</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class='col-sm-2'>
+                    <table class="table mt-5 table-borderless" style='width:200px'>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Ordenados</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>micro</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class='linha-vertical'>
+                    <hr>
+                </div>
+                <div class='col mt-3'>
+                    <div class='row'>
+                        <div class='col-sm-4'>
+                            <input type="text" class="form-control" placeholder="Números">
+                        </div>
+                        <div class='col-sm-2'>
+                            <button type="button" class="btn btn-primary">Criar Lista</button>
+                        </div>
+                        <div class='col-sm-2'>
+                            <button type="button" class="btn btn-primary ml-3">Ordenar Lista</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class='celular'>
+        <div class='container-fluid'>
+            <div class="table">
+                <table class="table mt-5">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Números</th>
+                            <th scope="col">1</th>
+                            <th scope="col">2</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
+                            <th scope="row">números</th>
+                            <td>celular</td>
+                            <td>celular</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class='col-sm-2'>
-            <table class="table mt-5 table-borderless">
+            <div class="table">
+                <table class="table mt-5">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Ordenados</th>
+                            <th scope="col">1</th>
+                            <th scope="col">2</th>
+                            <th scope="col">2</th>
+                            <th scope="col">2</th>
+                            <th scope="col">2</th>
+                            <th scope="col">2</th>
+                            <th scope="col">2</th>
+                            <th scope="col">2</th>
+                            <th scope="col">2</th>
+                            <th scope="col">2</th>
+                            <th scope="col">2</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
+                            <th scope="row">Ordenados</th>
+                            <td>celular</td>
+                            <td>celular</td>
+                            <td>celular</td>
+                            <td>celular</td>
+                            <td>celular</td>
+                            <td>celular</td>
+                            <td>celular</td>
+                            <td>celular</td>
+                            <td>celular</td>
+                            <td>celular</td>
+                            <td>celular</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <hr>
         </div>
     </div>
 </body>
