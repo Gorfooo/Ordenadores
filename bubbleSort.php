@@ -15,10 +15,16 @@
     <script src="https://kit.fontawesome.com/00a4711f34.js" crossorigin="anonymous"></script>
     <!--  -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    <!--  -->
+    <script src="Sort.js"></script>
     <title>Bubble Sort</title>
 </head>
 
 <body>
+<?php
+$Numero = $_POST['numero'];
+echo "<script>console.log('$Numero');</script>"
+?>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark d-flex align-items-center">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,10 +85,10 @@
                 <div class='col mt-3'>
                     <div class='row'>
                         <div class='col-sm-4'>
-                            <input type="text" class="form-control" placeholder="Números">
+                            <input type="text" class="form-control" id='numero' placeholder="Números">
                         </div>
                         <div class='col-sm-2'>
-                            <button type="button" class="btn btn-primary">Criar Lista</button>
+                            <button type="button" class="btn btn-primary" onclick='enviaNumeroBubble();'>Criar Lista</button>
                         </div>
                         <div class='col-sm-2'>
                             <button type="button" class="btn btn-primary ml-3">Ordenar Lista</button>
