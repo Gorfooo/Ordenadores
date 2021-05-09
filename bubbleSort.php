@@ -16,15 +16,11 @@
     <!--  -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <!--  -->
-    <script src="Sort.js"></script>
+    <script src="BubbleSort.js"></script>
     <title>Bubble Sort</title>
 </head>
 
 <body>
-<?php
-$Numero = $_POST['numero'];
-echo "<script>console.log('$Numero');</script>"
-?>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark d-flex align-items-center">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,36 +44,32 @@ echo "<script>console.log('$Numero');</script>"
         <div class='container-fluid'>
             <div class='row'>
                 <div class='col-sm-2'>
-                    <table class="table mt-5 table-borderless">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Números</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class='overflow'>
+                        <table class="table mt-5 table-borderless" id='tabelaRandomMicro'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Qtd</th>
+                                    <th scope="col">Números</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class='col-sm-2'>
-                    <table class="table mt-5 table-borderless" style='width:200px'>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Ordenados</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>1</th>
-                                <td>micro</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class='overflow'>
+                        <table class="table mt-5 table-borderless" style='width:200px' id='tabelaOrdenadaMicro'>
+                            <thead>
+                                <tr>
+                                    <th>Qtd</th>
+                                    <th>Ordenados</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class='linha-vertical'>
                     <hr>
@@ -88,10 +80,12 @@ echo "<script>console.log('$Numero');</script>"
                             <input type="text" class="form-control" id='numero' placeholder="Números">
                         </div>
                         <div class='col-sm-2'>
-                            <button type="button" class="btn btn-primary" onclick='enviaNumeroBubble();'>Criar Lista</button>
+                            <button type="button" class="btn btn-primary" onclick='enviaNumeroBubble();'>Criar
+                                Lista</button>
                         </div>
                         <div class='col-sm-2'>
-                            <button type="button" class="btn btn-primary ml-3">Ordenar Lista</button>
+                            <button type="button" class="btn btn-primary ml-3" onclick='bubbleSort(shuffledArray);'>Ordenar
+                                Lista</button>
                         </div>
                     </div>
                 </div>
@@ -102,7 +96,7 @@ echo "<script>console.log('$Numero');</script>"
     <div class='celular'>
         <div class='container-fluid'>
             <div class="table">
-                <table class="table mt-5">
+                <table class="table mt-5" id='tabelaRandomCelular'>
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -114,13 +108,12 @@ echo "<script>console.log('$Numero');</script>"
                         <tr>
                             <th scope="row">números</th>
                             <td>celular</td>
-                            <td>celular</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="table">
-                <table class="table mt-5">
+                <table class="table mt-5" id='tabelaOrdenadaCelular'>
                     <thead>
                         <tr>
                             <th scope="col">#</th>
