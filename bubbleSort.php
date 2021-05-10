@@ -84,10 +84,29 @@
                                 Lista</button>
                         </div>
                         <div class='col-sm-2'>
-                            <button type="button" class="btn btn-primary ml-3" onclick='bubbleSort(shuffledArray);'>Ordenar
+                            <button type="button" class="btn btn-primary ml-4" onclick='bubbleSort(shuffledArray);'>Ordenar
                                 Lista</button>
                         </div>
                     </div>
+                    <div class='row'>
+                        <div class='col mt-5' style='font-family:candara;font-size:20px'>
+                            <b>Bubble Sort é um algoritmo de ordenação que pode ser aplicado em Arrays e Listas dinâmicas. Se o objetivo é ordenar os valores em forma decrescente, então, a posição atual é comparada com a próxima posição e, se a posição atual for maior que a posição posterior, é realizada a troca dos valores nessa posição. Caso contrário, não é realizada a troca,
+                             apenas passa-se para o próximo par de comparações.</b>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col mt-5'>
+                        <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif">
+                        </div>
+                    </div>
+                    <div class='row' id='relatorioMenos1100px'>
+                        <div class='col mt-5'>
+                            <p>relatório</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-4' id='relatorioMais1100px'>
+                    <p>relatório</p>
                 </div>
             </div>
         </div>

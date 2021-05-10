@@ -15,6 +15,8 @@ function enviaNumeroBubble(){
 }
 
 function bubbleSort(shuffledArray){
+    $("#tabelaOrdenadaMicro tr").remove();
+    $("#tabelaOrdenadaMicro>tbody").append("<tr><th scope='row'>Qtd</th><td><b>Ordenados</b></td></tr>");
     let len = shuffledArray.length;
     let swapped;
     do {

@@ -12,6 +12,12 @@
     overflow-y: scroll;
     height: 94vh;
 }
+#relatorioMenos1100px{
+    display: none;
+}
+#relatorioMais1100px{
+    display: unset;
+}
 @media only screen and (max-width: 700px){
     .celular{
         display: unset;
@@ -31,5 +37,11 @@
         -ms-flex: 0 0 25%;
         flex: 0 0 25%;
         max-width: 25%;
+      }
+      #relatorioMenos1100px{
+          display:unset;
+      }
+      #relatorioMais1100px{
+          display: none;
       }
 }
