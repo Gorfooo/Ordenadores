@@ -28,16 +28,19 @@
         </button>
         <div class="collapse navbar-collapse" id='navbarSupportedContent'>
             <ul class='navbar-nav mr-auto'>
-                <li class='nav-item'><a class="navbar-brand text-white pr-2" href="#">Bubble Sort</a></li>
                 <li class='nav-item'><a class="navbar-brand text-white pr-2" href="#"
-                        onclick="window.open('quickSort.php','_self');">Quick Sort</a></li>
+                        onclick="window.open('bubbleSort.html','_self');">Bubble Sort</a></li>
                 <li class='nav-item'><a class="navbar-brand text-white pr-2" href="#"
-                        onclick="window.open('heapSort.php','_self');">Heap Sort</a></li>
+                        onclick="window.open('quickSort.html','_self');">Quick Sort</a></li>
                 <li class='nav-item'><a class="navbar-brand text-white pr-2" href="#"
-                        onclick="window.open('insertionSort.php','_self');">Insertion Sort</a></li>
+                        onclick="window.open('heapSort.html','_self');">Heap Sort</a></li>
                 <li class='nav-item'><a class="navbar-brand text-white pr-2" href="#"
-                        onclick="window.open('shellSort.php','_self');">Shell Sort</a></li>
+                        onclick="window.open('insertionSort.html','_self');">Insertion Sort</a></li>
+                <li class='nav-item'><a class="navbar-brand text-white pr-2" href="#"
+                        onclick="window.open('shellSort.html','_self');">Shell Sort</a></li>
             </ul>
+            <button type="button" class="btn btn-primary ml-4" onclick='limparRelatorio();'>Limpar
+                    relatório</button>
         </div>
     </nav>
     <div class='micro'>
@@ -45,7 +48,7 @@
             <div class='row'>
                 <div class='col-sm-2'>
                     <div class='overflow'>
-                        <table class="table mt-5 table-borderless" id='tabelaRandomMicro'>
+                        <table class="table table-borderless" id='tabelaRandomMicro'>
                             <thead>
                                 <tr>
                                     <th scope="col">Qtd</th>
@@ -59,8 +62,8 @@
                 </div>
                 <div class='col-sm-2'>
                     <div class='overflow'>
-                        <table class="table mt-5 table-borderless" style='width:200px' id='tabelaOrdenadaMicro'>
-                            <thead>
+                        <table class="table table-borderless" style='width:200px' id='tabelaOrdenadaMicro'>
+                            <thead id='headFixed'>
                                 <tr>
                                     <th>Qtd</th>
                                     <th>Ordenados</th>
@@ -71,25 +74,22 @@
                         </table>
                     </div>
                 </div>
-                <div class='linha-vertical'>
-                    <hr>
-                </div>
                 <div class='col mt-3'>
                     <div class='row'>
                         <div class='col-sm-4'>
                             <input type="text" class="form-control" id='numero' placeholder="Números">
                         </div>
                         <div class='col-sm-2'>
-                            <button type="button" class="btn btn-primary" onclick='enviaNumeroBubble();'>Criar
+                            <button type="button" class="btn btn-primary" onclick='criaNumero();'>Criar
                                 Lista</button>
                         </div>
-                        <div class='col-sm-2'>
+                        <div class='col-sm-2 offset-md-2' id='botaoOrdena'>
                             <button type="button" class="btn btn-primary ml-4" onclick='bubbleSort(shuffledArray);'>Ordenar
                                 Lista</button>
                         </div>
                     </div>
                     <div class='row'>
-                        <div class='col mt-5' style='font-family:candara;font-size:20px'>
+                        <div class='col mt-5' style='font-family:candara;font-size:16px'>
                             <b>Bubble Sort é um algoritmo de ordenação que pode ser aplicado em Arrays e Listas dinâmicas. Se o objetivo é ordenar os valores em forma decrescente, então, a posição atual é comparada com a próxima posição e, se a posição atual for maior que a posição posterior, é realizada a troca dos valores nessa posição. Caso contrário, não é realizada a troca,
                              apenas passa-se para o próximo par de comparações.</b>
                         </div>
@@ -99,75 +99,11 @@
                         <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif">
                         </div>
                     </div>
-                    <div class='row' id='relatorioMenos1100px'>
-                        <div class='col mt-5'>
-                            <p>relatório</p>
-                        </div>
-                    </div>
                 </div>
-                <div class='col-md-4' id='relatorioMais1100px'>
-                    <p>relatório</p>
+                <div class='col-md-4 ml-5'>
+                    <p id='relatorio'></p>
                 </div>
             </div>
-        </div>
-    </div>
-    </div>
-    <div class='celular'>
-        <div class='container-fluid'>
-            <div class="table">
-                <table class="table mt-5" id='tabelaRandomCelular'>
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">1</th>
-                            <th scope="col">2</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">números</th>
-                            <td>celular</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="table">
-                <table class="table mt-5" id='tabelaOrdenadaCelular'>
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">1</th>
-                            <th scope="col">2</th>
-                            <th scope="col">2</th>
-                            <th scope="col">2</th>
-                            <th scope="col">2</th>
-                            <th scope="col">2</th>
-                            <th scope="col">2</th>
-                            <th scope="col">2</th>
-                            <th scope="col">2</th>
-                            <th scope="col">2</th>
-                            <th scope="col">2</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Ordenados</th>
-                            <td>celular</td>
-                            <td>celular</td>
-                            <td>celular</td>
-                            <td>celular</td>
-                            <td>celular</td>
-                            <td>celular</td>
-                            <td>celular</td>
-                            <td>celular</td>
-                            <td>celular</td>
-                            <td>celular</td>
-                            <td>celular</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <hr>
         </div>
     </div>
 </body>

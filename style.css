@@ -1,24 +1,17 @@
-.linha-vertical {
-    height: 94vh;/*Altura da linha "acompanha altura da tela"*/
-    border-left: 1px solid;/*grossura da borda*/
-  }
-.celular{
-    display: none;
-}
 .micro{
     display: unset;
 }
 .overflow{
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x:hidden;
     height: 94vh;
 }
-#relatorioMenos1100px{
-    display: none;
+#relatorio{
+    overflow-y: auto;
+    overflow-x:auto;
+    height: 91vh;
 }
-#relatorioMais1100px{
-    display: unset;
-}
-@media only screen and (max-width: 700px){
+/* @media only screen and (max-width: 700px){
     .celular{
         display: unset;
     }
@@ -29,19 +22,21 @@
         overflow-x: scroll;
     }
     th, td {
-        min-width: 50px; /* width/largura das células à escolha */
+        min-width: 50px; /* width/largura das células à escolha *//*
     }
-}
-@media only screen and (max-width: 1100px){
+} */
+/* @media only screen and (max-width: 1300px){
     .col-sm-2 {
         -ms-flex: 0 0 25%;
         flex: 0 0 25%;
         max-width: 25%;
       }
-      #relatorioMenos1100px{
-          display:unset;
-      }
-      #relatorioMais1100px{
-          display: none;
-      }
+} */
+#headFixed{
+    position: sticky;
+}
+@media only screen and (max-width: 700px){/*ajusta botões*/
+    #botaoOrdena{
+        margin-left: 0.5rem;
+    }
 }
