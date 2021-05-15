@@ -1,50 +1,3 @@
-function heap_root(input, i) {
-    var left = 2 * i + 1;
-    var right = 2 * i + 2;
-    var max = i;
-
-    if (left < array_length && input[left] > input[max]) {
-        max = left;
-    }
-
-    if (right < array_length && input[right] > input[max])     {
-        max = right;
-    }
-
-    if (max != i) {
-        swap(input, i, max);
-        heap_root(input, max);
-    }
-}
-
-function swap(input, index_A, index_B) {
-    var temp = input[index_A];
-
-    input[index_A] = input[index_B];
-    input[index_B] = temp;
-}
-
-function heapSort(input) {
-    
-    array_length = input.length;
-
-    for (var i = Math.floor(array_length / 2); i >= 0; i -= 1)      {
-        heap_root(input, i);
-      }
-
-    for (i = input.length - 1; i > 0; i--) {
-        swap(input, 0, i);
-        array_length--;
-      
-      
-        heap_root(input, 0);
-    }
-}
-
-var arr = [3, 0, 2, 5, -1, 4, 1];
-heapSort(arr);
-console.log(arr);
-
 function criaNumero(){
     hora = new Date();
     horaFormatada = ("0" + hora.getHours()).slice(-2) + ':' + ("0" + hora.getMinutes()).slice(-2) + ':' + ("0" + hora.getSeconds()).slice(-2);
@@ -107,19 +60,18 @@ function heapSort(shuffledArray){
     $('#relatorio').append(horaFormatada + ' -> Início da ordenação de ' + ($('#tabelaRandomMicro tr').length-1) + ' números<br>');
     var inicioOrdenacaoNumeros = new Date();
    //ordenação
-    let len = shuffledArray.length;
-    let swapped;
-    do {
-        swapped = false;
-        for (let i = 0; i < len; i++) {
-            if (shuffledArray[i] > shuffledArray[i + 1]) {
-                let tmp = shuffledArray[i];
-                shuffledArray[i] = shuffledArray[i + 1];
-                shuffledArray[i + 1] = tmp;
-                swapped = true;
-            }
-        }
-    } while (swapped);
+   array_length = shuffledArray.length;
+   for (var i = Math.floor(array_length / 2); i >= 0; i -= 1)      {
+       heap_root(shuffledArray, i);
+     }
+
+   for (i = shuffledArray.length - 1; i > 0; i--) {
+       swap(shuffledArray, 0, i);
+       array_length--;
+     
+     
+       heap_root(shuffledArray, 0);
+   }
     for (i=0; i < numero; i++){//popula tabela
         $("#tabelaOrdenadaMicro>tbody").append("<tr><th scope='row'>"+(i+1)+"</th><td>"+shuffledArray[i]+"</td></tr>");
     }
@@ -130,6 +82,32 @@ function heapSort(shuffledArray){
     $('#relatorio').append(horaFormatada + ' -> Fim da ordenação de ' + ($('#tabelaRandomMicro tr').length-1) + ' números<br>');
     $('#relatorio').append('Tempo de ordenção dos números: ' + tempoOrdenacaoNumeros + 'ms<br>');
 };
+
+function heap_root(shuffledArray, i) {
+    var left = 2 * i + 1;
+    var right = 2 * i + 2;
+    var max = i;
+
+    if (left < array_length && shuffledArray[left] > shuffledArray[max]) {
+        max = left;
+    }
+
+    if (right < array_length && shuffledArray[right] > shuffledArray[max])     {
+        max = right;
+    }
+
+    if (max != i) {
+        swap(shuffledArray, i, max);
+        heap_root(shuffledArray, max);
+    }
+}
+
+function swap(shuffledArray, index_A, index_B) {
+    var temp = shuffledArray[index_A];
+
+    shuffledArray[index_A] = shuffledArray[index_B];
+    shuffledArray[index_B] = temp;
+}
 
 function limparRelatorio(){
     $('#relatorio').html('');

@@ -1,46 +1,3 @@
-var items = [5,3,7,6,2,9];
-function swap(items, leftIndex, rightIndex){
-    var temp = items[leftIndex];
-    items[leftIndex] = items[rightIndex];
-    items[rightIndex] = temp;
-}
-function partition(items, left, right) {
-    var pivot   = items[Math.floor((right + left) / 2)], //middle element
-        i       = left, //left pointer
-        j       = right; //right pointer
-    while (i <= j) {
-        while (items[i] < pivot) {
-            i++;
-        }
-        while (items[j] > pivot) {
-            j--;
-        }
-        if (i <= j) {
-            swap(items, i, j); //sawpping two elements
-            i++;
-            j--;
-        }
-    }
-    return i;
-}
-
-function quickSort(items, left, right) {
-    var index;
-    if (items.length > 1) {
-        index = partition(items, left, right); //index returned from partition
-        if (left < index - 1) { //more elements on the left side of the pivot
-            quickSort(items, left, index - 1);
-        }
-        if (index < right) { //more elements on the right side of the pivot
-            quickSort(items, index, right);
-        }
-    }
-    return items;
-}
-// first call to quick sort
-var sortedArray = quickSort(items, 0, items.length - 1);
-console.log(sortedArray); //prints [2,3,5,6,7,9]
-
 function criaNumero(){
     hora = new Date();
     horaFormatada = ("0" + hora.getHours()).slice(-2) + ':' + ("0" + hora.getMinutes()).slice(-2) + ':' + ("0" + hora.getSeconds()).slice(-2);
@@ -103,21 +60,9 @@ function quickSort(shuffledArray){
     $('#relatorio').append(horaFormatada + ' -> Início da ordenação de ' + ($('#tabelaRandomMicro tr').length-1) + ' números<br>');
     var inicioOrdenacaoNumeros = new Date();
    //ordenação
-    let len = shuffledArray.length;
-    let swapped;
-    do {
-        swapped = false;
-        for (let i = 0; i < len; i++) {
-            if (shuffledArray[i] > shuffledArray[i + 1]) {
-                let tmp = shuffledArray[i];
-                shuffledArray[i] = shuffledArray[i + 1];
-                shuffledArray[i + 1] = tmp;
-                swapped = true;
-            }
-        }
-    } while (swapped);
+    sortedArray = Sort(shuffledArray, 0, shuffledArray.length - 1);
     for (i=0; i < numero; i++){//popula tabela
-        $("#tabelaOrdenadaMicro>tbody").append("<tr><th scope='row'>"+(i+1)+"</th><td>"+shuffledArray[i]+"</td></tr>");
+        $("#tabelaOrdenadaMicro>tbody").append("<tr><th scope='row'>"+(i+1)+"</th><td>"+sortedArray[i]+"</td></tr>");
     }
     //fim ordenação
     tempoOrdenacaoNumeros = new Date() - inicioOrdenacaoNumeros;
@@ -126,6 +71,48 @@ function quickSort(shuffledArray){
     $('#relatorio').append(horaFormatada + ' -> Fim da ordenação de ' + ($('#tabelaRandomMicro tr').length-1) + ' números<br>');
     $('#relatorio').append('Tempo de ordenção dos números: ' + tempoOrdenacaoNumeros + 'ms<br>');
 };
+
+function swap(shuffledArray, leftIndex, rightIndex){
+    var temp = shuffledArray[leftIndex];
+    shuffledArray[leftIndex] = shuffledArray[rightIndex];
+    shuffledArray[rightIndex] = temp;
+}
+function partition(shuffledArray, left, right) {
+    var pivot   = shuffledArray[Math.floor((right + left) / 2)], //middle element
+        i       = left, //left pointer
+        j       = right; //right pointer
+    while (i <= j) {
+        while (shuffledArray[i] < pivot) {
+            i++;
+        }
+        while (shuffledArray[j] > pivot) {
+            j--;
+        }
+        if (i <= j) {
+            swap(shuffledArray, i, j); //sawpping two elements
+            i++;
+            j--;
+        }
+    }
+    return i;
+}
+
+function Sort(shuffledArray, left, right) {
+    var index;
+    if (shuffledArray.length > 1) {
+        index = partition(shuffledArray, left, right); //index returned from partition
+        if (left < index - 1) { //more elements on the left side of the pivot
+            Sort(shuffledArray, left, index - 1);
+        }
+        if (index < right) { //more elements on the right side of the pivot
+            Sort(shuffledArray, index, right);
+        }
+    }
+    return shuffledArray;
+}
+// first call to quick sort
+// var sortedArray = quickSort(ShuffledArray, 0, ShuffledArray.length - 1);
+// console.log(sortedArray); //prints [2,3,5,6,7,9]
 
 function limparRelatorio(){
     $('#relatorio').html('');

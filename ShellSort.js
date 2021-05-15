@@ -1,22 +1,3 @@
-function shellSort(arr) {
-	let n = arr.length;
-
-	for (let gap = Math.floor(n/2); gap > 0; gap = Math.floor(gap/2))	{
-		for (let i = gap; i < n; i += 1)  {
-			let temp = arr[i];
-			
-			let j;
-			for (j = i; j >= gap && arr[j-gap] > temp; j-=gap)  {
-				arr[j] = arr[j-gap];
-			}
-
-			arr[j] = temp;
-		}
-	}
-
-	return arr;
-}
-
 function criaNumero(){
     hora = new Date();
     horaFormatada = ("0" + hora.getHours()).slice(-2) + ':' + ("0" + hora.getMinutes()).slice(-2) + ':' + ("0" + hora.getSeconds()).slice(-2);
@@ -79,19 +60,19 @@ function shellSort(shuffledArray){
     $('#relatorio').append(horaFormatada + ' -> Início da ordenação de ' + ($('#tabelaRandomMicro tr').length-1) + ' números<br>');
     var inicioOrdenacaoNumeros = new Date();
    //ordenação
-    let len = shuffledArray.length;
-    let swapped;
-    do {
-        swapped = false;
-        for (let i = 0; i < len; i++) {
-            if (shuffledArray[i] > shuffledArray[i + 1]) {
-                let tmp = shuffledArray[i];
-                shuffledArray[i] = shuffledArray[i + 1];
-                shuffledArray[i + 1] = tmp;
-                swapped = true;
-            }
-        }
-    } while (swapped);
+    let n = shuffledArray.length;
+	for (let gap = Math.floor(n/2); gap > 0; gap = Math.floor(gap/2))	{
+		for (let i = gap; i < n; i += 1)  {
+			let temp = shuffledArray[i];
+			
+			let j;
+			for (j = i; j >= gap && shuffledArray[j-gap] > temp; j-=gap)  {
+				shuffledArray[j] = shuffledArray[j-gap];
+			}
+
+			shuffledArray[j] = temp;
+		}
+	}
     for (i=0; i < numero; i++){//popula tabela
         $("#tabelaOrdenadaMicro>tbody").append("<tr><th scope='row'>"+(i+1)+"</th><td>"+shuffledArray[i]+"</td></tr>");
     }
